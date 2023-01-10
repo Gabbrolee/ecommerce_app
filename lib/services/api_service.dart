@@ -37,6 +37,21 @@ class ApiService{
   }
 
 
+  static const int pageLimit = 10;
+  Future<List<Product>> getProductsPage([int page = 1]) async{
+    return http.get(Uri.parse('$baseUrl/products?limit=$pageLimit&page=$page'), headers: headers)
+        .then((data){
+      final products = <Product>[];
+      if(data.statusCode == 200){
+        final jsonData = json.decode(data.body);
+        for(var product in jsonData) {
+          products.add(Product.fromJson(product));
+        }
+      }
+      return products;
+    });
+  }
+
   Future<Product?> getProduct(int id) {
     return http.get(Uri.parse('$baseUrl/products/$id'), headers: headers)
         .then((data) {
