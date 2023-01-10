@@ -36,3 +36,5 @@ On cart screen, user can see all the items added to the cart and the option to r
 Error handling was implemented to ensure that the app can gracefully handle any errors that occur during the loading of data from the APIs.
 In case of error, proper message will be displayed to the user.
 
+file:///Users/topgamer/Desktop/Screen%20Shot%202023-01-10%20at%2022.39.35.png
+
