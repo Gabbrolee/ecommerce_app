@@ -79,27 +79,29 @@ class _HomeScreenState extends State<HomeScreen> {
           ),
           itemBuilder: ((context, index){
             final product = productModel.products[index];
-            return Column(
-              children: [
-                const SizedBox(height: 20,),
-                Image.network(
-                  product.image ?? '',
-                  height: 60,
-                  width: 60,
-                ),
-                ListTile(
-                  title: Text(product.title, textAlign: TextAlign.left, overflow: TextOverflow.ellipsis,),
-                  subtitle: Text("\$${product.price}",
-                    textAlign: TextAlign.center,
-                    style: const TextStyle(fontSize: 20.0, fontWeight: FontWeight.bold, color: Colors.black),
+            return InkWell(
+              onTap: (){
+                Navigator.push(context,
+                    MaterialPageRoute(builder: (_)=>  ProductDetailScreen(id: product.id,))
+                );
+              },
+              child: Column(
+                children: [
+                  const SizedBox(height: 20,),
+                  Image.network(
+                    product.image ?? '',
+                    height: 60,
+                    width: 60,
                   ),
-                  onTap: (){
-                    Navigator.push(context,
-                        MaterialPageRoute(builder: (_)=>  ProductDetailScreen(id: product.id,))
-                    );
-                  },
-                ),
-              ],
+                  ListTile(
+                    title: Text(product.title, textAlign: TextAlign.left, overflow: TextOverflow.ellipsis,),
+                    subtitle: Text("\$${product.price}",
+                      textAlign: TextAlign.center,
+                      style: const TextStyle(fontSize: 20.0, fontWeight: FontWeight.bold, color: Colors.black),
+                    ),
+                  ),
+                ],
+              ),
             );
           }),
         ),
