@@ -91,16 +91,16 @@ class CartScreen extends StatelessWidget {
           );
         },
       ),
-    floatingActionButton: SizedBox(
-      height: 50,
-      child: FloatingActionButton(
-        backgroundColor: Colors.black,
-        onPressed: (){},
-        shape: RoundedRectangleBorder(),
-        child: Text('Total:'),
-
-      ),
-    ),
+    // floatingActionButton: SizedBox(
+    //   height: 50,
+    //   child: FloatingActionButton(
+    //     backgroundColor: Colors.black,
+    //     onPressed: (){},
+    //     shape: RoundedRectangleBorder(),
+    //     child: Text('Total:'),
+    //
+    //   ),
+    // ),
     );
   }
 }
