@@ -25,12 +25,12 @@ class _LoginScreenState extends State<LoginScreen> {
  // ApiService service = ApiService();
   final TextEditingController usernameCtrl =
       TextEditingController(
-       //   text: 'mor_2314'
+          text: 'mor_2314'
       );
 
   final TextEditingController passwordCtrl =
       TextEditingController(
-       //   text: '83r5^_'
+          text: '83r5^_'
       );
 
   @override
@@ -93,6 +93,7 @@ class _LoginScreenState extends State<LoginScreen> {
                   await UserSimplePreference.setPassword(password);
                   final getToken =
                       await service.login(usernameCtrl.text, passwordCtrl.text);
+
                   if (getToken != null && getToken['token'] != null) {
                     print("username2:$username");
                     print("password2:$password");
